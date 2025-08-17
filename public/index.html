@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xelora Home</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="main-container in-toolbar">
+      <div class="game-container hidden"></div>
+      <div class="web-container hidden"></div>
+    </main>
+    <div class="welcomeDiv no-select">
+      <img
+        src="../public/icons/XeloraWelcome2.png"
+        alt="Use the toolbar below to start."
+        draggable="false"
+        class="no-select"
+      />
+    </div>
+
+    <!-- Settings Menu -->
+    <div class="settings-container no-select in-toolbar hidden">
+      <!-- Settings Navigation Bar -->
+      <div class="settings-bar">
+        <button
+          class="lexend-medium"
+          id="proxy-setting-nav"
+          onclick="proxySettingNavFunc()"
+        >
+          <img
+            src="../public/icons/wifi-icon.svg"
+            alt="Proxy Icon"
+            draggable="false"
+          />
+          Proxy
+        </button>
+        <button
+          class="lexend-medium"
+          id="interface-setting-nav"
+          onclick="interfaceSettingNavFunc()"
+        >
+          <img
+            src="../public/icons/themes-icon.svg"
+            alt="Interface Icon"
+            draggable="false"
+          />
+          Interface
+        </button>
+        <button
+          class="lexend-medium"
+          id="privacy-setting-nav"
+          onclick="privacySettingNavFunc()"
+        >
+          <img
+            src="../public/icons/privacy-icon.svg"
+            alt="Privacy Icon"
+            draggable="false"
+          />
+          Privacy
+        </button>
+      </div>
+
+      <!-- Proxy Settings -->
+      <div class="settings-category-container" id="settings-proxy-container">
+        <div>
+          <p class="setting-header lexend-normal">Proxy Type</p>
+          <p class="setting-desc lexend-medium">
+            Which proxy should we use to search?
+          </p>
+          <select
+            name="proxy-type"
+            id="proxy-select"
+            class="settings-dropdown lexend-medium"
+          >
+            <option value="scramjet" selected>Scramjet</option>
+            <option value="ultraviolet">Ultraviolet</option>
+          </select>
+        </div>
+        <div>
+          <p class="setting-header lexend-normal">Search Engine</p>
+          <p class="setting-desc lexend-medium">
+            Which search engine would you like to use?
+          </p>
+          <select
+            name="search-engine"
+            id="search-engine-select"
+            class="settings-dropdown lexend-medium"
+          >
+            <option value="google" selected>Google</option>
+            <option value="duckduckgo">DuckDuckGo</option>
+          </select>
+        </div>
+      </div>
+      <div class="settings-info no-select" id="settings-proxy-info">
+        <p class="settings-indicator lexend-medium">Proxy Settings</p>
+        <p class="version-indicator lexend-medium">Xelora Dev Build 1.00</p>
+      </div>
+
+      <!-- Privacy Settings -->
+      <div
+        class="settings-category-container hidden"
+        id="settings-privacy-container"
+      >
+        <div>
+          <p class="setting-header lexend-normal">About Blank</p>
+          <p class="setting-desc lexend-medium">
+            Prevent Xelora from appearing in your history.
+          </p>
+          <button class="lexend-medium" id="setting-toggle">Off</button>
+        </div>
+        <div>
+          <p class="setting-header lexend-normal">Save Settings</p>
+          <p class="setting-desc lexend-medium">
+            Should we save your settings?
+          </p>
+          <button class="lexend-medium" id="setting-toggle">Off</button>
+        </div>
+      </div>
+      <div class="settings-info no-select hidden" id="settings-privacy-info">
+        <p class="settings-indicator lexend-medium">Privacy Settings</p>
+        <p class="version-indicator lexend-medium">Xelora Dev Build 1.00</p>
+      </div>
+
+      <!-- Interface/Theme Settings -->
+      <div
+        class="settings-category-container hidden"
+        id="settings-themes-container"
+      >
+        <div>
+          <p class="setting-header lexend-normal">Limited Animation</p>
+          <p class="setting-desc lexend-medium">
+            Limit animations for better performance.
+          </p>
+          <button class="lexend-medium" id="setting-toggle">Off</button>
+        </div>
+        <div>
+          <p class="setting-header lexend-normal">Custom Background</p>
+          <p class="setting-desc lexend-medium">Use a custom background.</p>
+          <button class="lexend-medium" id="setting-upload">Upload</button>
+        </div>
+      </div>
+      <div class="settings-info no-select hidden" id="settings-theme-info">
+        <p class="settings-indicator lexend-medium">Interface Settings</p>
+        <p class="version-indicator lexend-medium">Xelora Dev Build 1.00</p>
+      </div>
+    </div>
+
+    <!-- Launcher -->
+    <div class="launch-container noselect in-toolbar hidden">
+      <div class="launch-bar">
+        <button class="lexend-medium" id="app-launcher-nav" onclick="">
+          <img
+            src="../public/icons/dashboard.svg"
+            alt="App Icon"
+            draggable="false"
+            onclick="appLauncherNavFunc()"
+          />
+          Apps
+        </button>
+        <button class="lexend-medium" id="games-launcher-nav" onclick="">
+          <img
+            src="../public/icons/game-controller-white.svg"
+            alt="Games Icon"
+            draggable="false"
+          />
+          Games
+        </button>
+        <button class="lexend-medium" id="tools-launcher-nav" onclick="">
+          <img
+            src="../public/icons/repos.svg"
+            alt="Tools Icon"
+            draggable="false"
+          />
+          Tools
+        </button>
+      </div>
+    </div>
+
+    <!-- Game/Apps/Tools Category Container -->
+    <div
+      class="launch-category-container hidden"
+      id="launch-games-container"
+    ></div>
+    <div
+      class="launch-category-container hidden"
+      id="launch-apps-container"
+    ></div>
+    <div
+      class="launch-category-container hidden"
+      id="launch-tools-container"
+    ></div>
+
+    <!-- Search -->
+    <div class="search-container">
+      <img src="../public/icons/XeloraText.png" alt="Browse Freely" />
+      <input type="text" placeholder="Browse Freely" class="lexend-medium" />
+    </div>
+
+    <!-- Toolbar -->
+    <div class="toolBar no-select">
+      <nav>
+        <button id="toolBar-discord">
+          <a href="https://discord.gg/qBTVdXbSur" target="_blank">
+            <img
+              src="../public/icons/discord.png"
+              alt="Join Our Discord"
+              draggable="false"
+            />
+          </a>
+        </button>
+        <button id="toolBar-launch" onclick="toggleLauncher()">
+          <img
+            src="../public/icons/game-controller.png"
+            alt="Launch Games & Apps"
+            draggable="false"
+          />
+        </button>
+        <button id="toolBar-search" onclick="toggleSearch()">
+          <img
+            src="../public/icons/search.png"
+            alt="Browse Now"
+            draggable="false"
+          />
+        </button>
+        <button id="toolBar-settings" onclick="toggleSettings()">
+          <img
+            src="../public/icons/settings.png"
+            alt="Open Settings"
+            draggable="false"
+          />
+        </button>
+        <button id="toolBar-github">
+          <img
+            src="../public/icons/github.png"
+            alt="View Our Github"
+            draggable="false"
+          />
+        </button>
+      </nav>
+    </div>
+
+    <!-- Background Image -->
+    <img
+      src="../public/icons/WebBackground2.jpg"
+      alt="Background Image"
+      class="background-img"
+      draggable="false"
+    />
+
+    <!-- Scripts -->
+    <script src="./app.js"></script>
+    <script src="game-loading.js"></script>
+  </body>
+</html>

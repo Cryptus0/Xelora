@@ -1,0 +1,142 @@
+[
+  {
+    "name": "Minecraft",
+    "path": "./games/Minecraft/index.html",
+    "icon": "./games/Minecraft/icon.jpg"
+  },
+  {
+    "name": "Friday Night Funkin",
+    "path": "./games/FridayNightFunkin/index.html",
+    "icon": "./games/FridayNightFunkin/cover-icon.png"
+  },
+  {
+    "name": "Krunker",
+    "path": "./games/krunker/index.html",
+    "icon": "./games/krunker/img/krunker-io.jpg"
+  },
+  {
+    "name": "Retro Bowl",
+    "path": "./games/retro-bowl/index.html",
+    "icon": "./games/retro-bowl/img/icon.jpg"
+  },
+  {
+    "name": "Subway Surfers",
+    "path": "./games/subway-surfers/index.html",
+    "icon": "./games/subway-surfers/img/splash.jpg"
+  },
+  {
+    "name": "Superhot",
+    "path": "./games/superhot/index.html",
+    "icon": "./games/superhot/hot.jpg"
+  },
+  {
+    "name": "Crossy Road",
+    "path": "./games/crossyroad/index.html",
+    "icon": "./games/crossyroad/crossyroad.png"
+  },
+  {
+    "name": "Cookie Clicker",
+    "path": "./games/cookieclicker/index.html",
+    "icon": "./games/cookieclicker/icon.jpg"
+  },
+  {
+    "name": "Cluster Rush",
+    "path": "./games/cluster-rush/index.html",
+    "icon": "./games/cluster-rush/icon.jpg"
+  },
+  {
+    "name": "Among Us",
+    "path": "./games/among-us/index.html",
+    "icon": "./games/among-us/red.png"
+  },
+  {
+    "name": "Bitlife",
+    "path": "./games/bitlife/index.html",
+    "icon": "./games/bitlife/logo.png"
+  },
+  {
+    "name": "Temple Run 2",
+    "path": "./games/temple-run-2/index.html",
+    "icon": "./games/temple-run-2/img/cover.png"
+  },
+  {
+    "name": "Mario",
+    "path": "./games/mario/index.html",
+    "icon": "./games/mario/icon.png"
+  },
+  {
+    "name": "Backrooms",
+    "path": "./games/backrooms/index.html",
+    "icon": "./games/backrooms/icon.jfif"
+  },
+  {
+    "name": "OvO",
+    "path": "./games/ovo/index.html",
+    "icon": "./games/ovo/icon-256.png"
+  },
+  {
+    "name": "Jetpack",
+    "path": "./games/jetpack/index.html",
+    "icon": "./games/jetpack/img/icon.png"
+  },
+  {
+    "name": "Wordle",
+    "path": "./games/wordle/index.html",
+    "icon": "./games/wordle/img/logo_144x144.png"
+  },
+  {
+    "name": "Tiny Fishing",
+    "path": "./games/tiny-fishing/index.html",
+    "icon": "./games/tiny-fishing/icon.png"
+  },
+  {
+    "name": "Idle Breakout",
+    "path": "./games/idle-breakout/index.html",
+    "icon": "./games/idle-breakout/img/favicon.png"
+  },
+  {
+    "name": "House of Hazards",
+    "path": "./games/house-of-hazards/index.html",
+    "icon": "./games/house-of-hazards/icon.png"
+  },
+  {
+    "name": "Fireboy & Watergirl Forest Temple",
+    "path": "./games/fireboywatergirlforesttemple/index.html",
+    "icon": "./games/fireboywatergirlforesttemple/logo.jpeg"
+  },
+  {
+    "name": "Flappy Bird",
+    "path": "./games/flappybird/index.html",
+    "icon": "./games/flappybird/icon.png"
+  },
+  {
+    "name": "Stack",
+    "path": "./games/stack/index.html",
+    "icon": "./games/stack/stack.png"
+  },
+  {
+    "name": "There Is No Game",
+    "path": "./games/there-is-no-game/index.html",
+    "icon": "./games/there-is-no-game/image.png"
+  },
+  {
+    "name": "ChromeDino",
+    "path": "./games/chromedino/index.html",
+    "icon": "./games/chromedino/icon.png"
+  },
+  {
+    "name": "2048",
+    "path": "./games/2048/index.html",
+    "icon": "./games/2048/2048.png"
+  },
+  {
+    "name": "Bloons TD 2",
+    "path": "./games/bloonstd2/index.html",
+    "icon": "./games/bloonstd2/bloonstd2.png"
+  },
+  {
+    "name": "Coreball",
+    "path": "./games/core-ball/index.html",
+    "icon": "./games/core-ball/pr_source.png"
+  }
+]

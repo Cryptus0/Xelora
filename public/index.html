@@ -5,15 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Xelora Home</title>
     <link rel="stylesheet" href="./style.css" />
+
+    <!-- Ultraviolet Setup -->
+    <script src="/uv/uv.bundle.js"></script>
+    <script src="/uv/uv.config.js"></script>
+    <script src="/baremux/index.js"></script>
+
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/uv/sw.js");
+        });
+      }
+    </script>
   </head>
   <body>
     <main class="main-container in-toolbar">
       <div class="game-container hidden"></div>
-      <div class="web-container hidden"></div>
+      <div class="web-container">
+        <iframe id="iframeWindow" class="iframeWindow"></iframe>
+      </div>
     </main>
     <div class="welcomeDiv no-select">
       <img
-        src="../public/icons/XeloraWelcome2.png"
+        src="./icons/XeloraWelcome2.png"
         alt="Use the toolbar below to start."
         draggable="false"
         class="no-select"
@@ -29,11 +44,7 @@
           id="proxy-setting-nav"
           onclick="proxySettingNavFunc()"
         >
-          <img
-            src="../public/icons/wifi-icon.svg"
-            alt="Proxy Icon"
-            draggable="false"
-          />
+          <img src="./icons/wifi-icon.svg" alt="Proxy Icon" draggable="false" />
           Proxy
         </button>
         <button
@@ -42,7 +53,7 @@
           onclick="interfaceSettingNavFunc()"
         >
           <img
-            src="../public/icons/themes-icon.svg"
+            src="./icons/themes-icon.svg"
             alt="Interface Icon"
             draggable="false"
           />
@@ -54,7 +65,7 @@
           onclick="privacySettingNavFunc()"
         >
           <img
-            src="../public/icons/privacy-icon.svg"
+            src="./icons/privacy-icon.svg"
             alt="Privacy Icon"
             draggable="false"
           />
@@ -65,17 +76,17 @@
       <!-- Proxy Settings -->
       <div class="settings-category-container" id="settings-proxy-container">
         <div>
-          <p class="setting-header lexend-normal">Proxy Type</p>
+          <p class="setting-header lexend-normal">Connection Type</p>
           <p class="setting-desc lexend-medium">
-            Which proxy should we use to search?
+            Which connection should we use to search?
           </p>
           <select
-            name="proxy-type"
-            id="proxy-select"
+            name="connection-type"
+            id="connection-select"
             class="settings-dropdown lexend-medium"
           >
-            <option value="scramjet" selected>Scramjet</option>
-            <option value="ultraviolet">Ultraviolet</option>
+            <option value="epoxy" selected>Epoxy</option>
+            <option value="bare">Bare</option>
           </select>
         </div>
         <div>
@@ -152,7 +163,7 @@
       <div class="launch-bar">
         <button class="lexend-medium" id="app-launcher-nav" onclick="">
           <img
-            src="../public/icons/dashboard.svg"
+            src="./icons/dashboard.svg"
             alt="App Icon"
             draggable="false"
             onclick="appLauncherNavFunc()"
@@ -161,18 +172,14 @@
         </button>
         <button class="lexend-medium" id="games-launcher-nav" onclick="">
           <img
-            src="../public/icons/game-controller-white.svg"
+            src="./icons/game-controller-white.svg"
             alt="Games Icon"
             draggable="false"
           />
           Games
         </button>
         <button class="lexend-medium" id="tools-launcher-nav" onclick="">
-          <img
-            src="../public/icons/repos.svg"
-            alt="Tools Icon"
-            draggable="false"
-          />
+          <img src="./icons/repos.svg" alt="Tools Icon" draggable="false" />
           Tools
         </button>
       </div>
@@ -194,8 +201,16 @@
 
     <!-- Search -->
     <div class="search-container">
-      <img src="../public/icons/XeloraText.png" alt="Browse Freely" />
-      <input type="text" placeholder="Browse Freely" class="lexend-medium" />
+      <img src="./icons/XeloraText.png" alt="Browse Freely" />
+      <input
+        type="text"
+        placeholder="Browse Freely"
+        id="urlInput"
+        class="lexend-medium"
+      />
+      <button id="searchButton" class="searchButton lexend-medium">
+        Explore
+      </button>
     </div>
 
     <!-- Toolbar -->
@@ -204,7 +219,7 @@
         <button id="toolBar-discord">
           <a href="https://discord.gg/qBTVdXbSur" target="_blank">
             <img
-              src="../public/icons/discord.png"
+              src="./icons/discord.png"
               alt="Join Our Discord"
               draggable="false"
             />
@@ -212,28 +227,24 @@
         </button>
         <button id="toolBar-launch" onclick="toggleLauncher()">
           <img
-            src="../public/icons/game-controller.png"
+            src="./icons/game-controller.png"
             alt="Launch Games & Apps"
             draggable="false"
           />
         </button>
         <button id="toolBar-search" onclick="toggleSearch()">
-          <img
-            src="../public/icons/search.png"
-            alt="Browse Now"
-            draggable="false"
-          />
+          <img src="./icons/search.png" alt="Browse Now" draggable="false" />
         </button>
         <button id="toolBar-settings" onclick="toggleSettings()">
           <img
-            src="../public/icons/settings.png"
+            src="./icons/settings.png"
             alt="Open Settings"
             draggable="false"
           />
         </button>
         <button id="toolBar-github">
           <img
-            src="../public/icons/github.png"
+            src="./icons/github.png"
             alt="View Our Github"
             draggable="false"
           />
@@ -243,14 +254,15 @@
 
     <!-- Background Image -->
     <img
-      src="../public/icons/WebBackground2.jpg"
+      src="./icons/WebBackground2.jpg"
       alt="Background Image"
       class="background-img"
       draggable="false"
     />
 
     <!-- Scripts -->
-    <script src="./app.js"></script>
+    <script src="nav.js"></script>
     <script src="game-loading.js"></script>
+    <script src="proxy.js"></script>
   </body>
 </html>
